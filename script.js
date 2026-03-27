@@ -1,9 +1,10 @@
 const API = "http://127.0.0.1:8000";
 
+// FIRE
 async function getFire() {
-    const age = Number(document.getElementById("age").value);
-    const income = Number(document.getElementById("income").value);
-    const expenses = Number(document.getElementById("expenses").value);
+    const age = +document.getElementById("age").value;
+    const income = +document.getElementById("income").value;
+    const expenses = +document.getElementById("expenses").value;
 
     const res = await fetch(API + "/fire", {
         method: "POST",
@@ -12,17 +13,14 @@ async function getFire() {
     });
 
     const data = await res.json();
-
-    if (data.status === "success") {
-        document.getElementById("fireResult").innerText = data.data.message;
-    } else {
-        document.getElementById("fireResult").innerText = data.error;
-    }
+    document.getElementById("fireResult").innerText =
+        data.status === "success" ? data.data.message : data.error;
 }
 
+// SCORE
 async function getScore() {
-    const income = Number(document.getElementById("income").value);
-    const savings = Number(document.getElementById("savings").value);
+    const income = +document.getElementById("income2").value;
+    const savings = +document.getElementById("savings").value;
 
     const res = await fetch(API + "/score", {
         method: "POST",
@@ -31,14 +29,11 @@ async function getScore() {
     });
 
     const data = await res.json();
-
-    if (data.status === "success") {
-        document.getElementById("scoreResult").innerText = data.data.message;
-    } else {
-        document.getElementById("scoreResult").innerText = data.error;
-    }
+    document.getElementById("scoreResult").innerText =
+        data.status === "success" ? data.data.message : data.error;
 }
 
+// CHAT
 async function askAI() {
     const question = document.getElementById("question").value;
 
@@ -49,18 +44,23 @@ async function askAI() {
     });
 
     const data = await res.json();
-
-    if (data.status === "success") {
-        document.getElementById("chatResult").innerText = data.data.response;
-    } else {
-        document.getElementById("chatResult").innerText = data.error;
-    }
+    document.getElementById("chatResult").innerText =
+        data.status === "success" ? data.data.response : data.error;
 }
 
+// VOICE 🎙️
 function startVoice() {
-    const recognition = new webkitSpeechRecognition();
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-    recognition.onresult = function(event) {
+    if (!SpeechRecognition) {
+        alert("Voice not supported in this browser");
+        return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "en-IN";
+
+    recognition.onresult = (event) => {
         const text = event.results[0][0].transcript;
         document.getElementById("question").value = text;
         askAI();
