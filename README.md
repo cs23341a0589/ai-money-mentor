@@ -55,15 +55,7 @@ ai-money-mentor/
 │── script.js
 ```
 
-
-## 🎨 UI Features
-
 * 🌙 Dark mode toggle
 * 📱 Responsive design
 * 📦 Card-based layout
 * ⚡ Real-time API integration
-
-
-
-**Your Name**
-GitHub: https://github.com/your-username
