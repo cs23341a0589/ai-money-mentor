@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Money Mentor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<header>
+    <h1>💰 AI Money Mentor</h1>
+    <div class="toggle" onclick="toggleMode()">🌙 Toggle</div>
+</header>
+
+<div class="grid">
+
+<!-- FIRE -->
+<div class="card">
+    <h2>FIRE Planner</h2>
+    <input id="age" placeholder="Age">
+    <input id="income" placeholder="Income">
+    <input id="expenses" placeholder="Expenses">
+    <button onclick="getFire()">Get Plan</button>
+    <div id="fireResult" class="result"></div>
+</div>
+
+<!-- SCORE -->
+<div class="card">
+    <h2>Money Score</h2>
+    <input id="savings" placeholder="Savings">
+    <button onclick="getScore()">Check Score</button>
+    <div id="scoreResult" class="result"></div>
+</div>
+
+<!-- CHAT -->
+<div class="card" style="grid-column: span 2;">
+    <h2>Ask AI</h2>
+    <input id="question" placeholder="Ask something...">
+    <button onclick="askAI()">Ask</button>
+    <div id="chatResult" class="result"></div>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+function toggleMode() {
+    document.body.style.background =
+        document.body.style.background.includes("0f172a")
+        ? "#f4f6f8"
+        : "linear-gradient(135deg, #0f172a, #1e293b)";
+}
+</script>
+
+</body>
+</html>
