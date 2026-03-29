@@ -1,61 +1,72 @@
-# 💰 AI Money Mentor 🤖
+🚀 Overview
 
-AI Money Mentor is a full-stack personal finance web app that helps users plan investments, calculate financial health, and get AI-based suggestions.
+AI Money Mentor is a smart financial assistant web application that helps users manage their money effectively. It allows users to track expenses, set financial goals, analyze spending patterns, and receive intelligent financial advice using AI.
 
+🎯 Features
+💰 Expense Tracking
+📈 Income vs Expense Charts
+🎯 Goal Planning
+🧠 Financial Health Score
+🤖 AI-based Financial Suggestions
+🔐 User Authentication
+🏗️ System Architecture
 
-## 🚀 Features
+The application follows a modern architecture:
 
-### 🔥 FIRE Planner (Retirement Calculator)
+Frontend built using React and TypeScript
+Backend handled by Supabase (Database + Auth + APIs)
+AI integration using OpenAI GPT API
+🔄 Workflow
+User enters financial data or asks a question
+Data is sent to the backend (Supabase)
+Data is stored in the database
+Request is processed and sent to AI (GPT API)
+AI generates financial advice
+Response is displayed to the user
 
-* Calculates:
+💻 Technologies Used
+🌐 Frontend:
+React
+TypeScript
+Tailwind CSS
+Vite
+⚙️ Backend:
+Supabase (Backend-as-a-Service)
+🗄️ Database:
+PostgreSQL (via Supabase)
+🤖 AI:
+OpenAI GPT API
 
-  * Monthly SIP investment
-  * Years left to retire
-  * Estimated retirement corpus
-* Based on age, income, and expenses
+📁 Project Structure
+components/
+  Auth.tsx
+  ExpenseTracker.tsx
+  FIREPlanner.tsx
+  GoalPlanner.tsx
+  HealthScore.tsx
+  IncomeExpenseChart.tsx
 
+lib/
+  calculations.ts
+  database.types.ts
+  supabase.ts
 
-### 📊 Financial Health Score
+App.tsx
+main.tsx
+index.css
 
-* Gives a score out of 100
-* Based on income and savings
-* Provides status:
+⚙️ Setup Instructions
 
-  * Excellent
-  * Good
-  * Needs Improvement
- 
+Install dependencies:
+npm install
+Run the project:
+npm run dev
 
-## 🛠️ Tech Stack
+Add your .env file:
+VITE_SUPABASE_URL=your_url
+VITE_SUPABASE_ANON_KEY=your_key
+OPENAI_API_KEY=your_key
 
-* **Frontend:** HTML, CSS, JavaScript
-* **Backend:** FastAPI
-* **Server:** Uvicorn
-* **Language:** Python
+🙌 Conclusion
 
-Dependencies:
-
-* fastapi
-* uvicorn 
-
----
-
-## 📂 Project Structure
-
-```id="struct123"
-ai-money-mentor/
-│── main.py
-│── fire.py
-│── score.py
-│── chat.py
-│── requirements.txt
-│
-│── index.html
-│── style.css
-│── script.js
-```
-
-* 🌙 Dark mode toggle
-* 📱 Responsive design
-* 📦 Card-based layout
-* ⚡ Real-time API integration
+AI Money Mentor makes financial planning simple, affordable, and accessible for everyone. It helps users build better financial habits and make smarter decisions.
