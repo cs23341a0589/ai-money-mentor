@@ -37,23 +37,6 @@ PostgreSQL (via Supabase)
 🤖 AI:
 OpenAI GPT API
 
-📁 Project Structure
-components/
-  Auth.tsx
-  ExpenseTracker.tsx
-  FIREPlanner.tsx
-  GoalPlanner.tsx
-  HealthScore.tsx
-  IncomeExpenseChart.tsx
-
-lib/
-  calculations.ts
-  database.types.ts
-  supabase.ts
-
-App.tsx
-main.tsx
-index.css
 
 ⚙️ Setup Instructions
 
